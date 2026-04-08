@@ -1,0 +1,12 @@
+.section-header {
+}
+
+.section-header__label {
+  margin: 0 1rem 0 0;
+  text-transform: uppercase;
+  color: #3c78d8;
+}
+
+.section-header__line {
+  width: 100%;
+}
