@@ -1,14 +1,14 @@
 {
-  "name": "csui",
+  "name": "pgmh",
   "version": "0.0.0",
-  "description": "React component library for Chiropteran Studio's other front-end projects",
-  "homepage": "https://github.com/Chiropteran-Studio/CSUI#readme",
+  "description": "Project Get Me Hired",
+  "homepage": "https://github.com/RelGray/PGMH#readme",
   "bugs": {
-    "url": "https://github.com/Chiropteran-Studio/CSUI/issues"
+    "url": "https://github.com/RelGray/PGMH/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Chiropteran-Studio/CSUI.git"
+    "url": "git+https://github.com/RelGray/PGMH.git"
   },
   "author": "AverageBatEnjoyer",
   "type": "module",
