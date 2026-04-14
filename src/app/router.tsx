@@ -3,15 +3,25 @@ import {
   createRoute,
   createRouter,
   Outlet,
+  HeadContent,
 } from '@tanstack/react-router';
 import { TanStackRouterDevtools } from '@tanstack/router-devtools';
 
 import Resume from '~features/resume/components/Resume';
 
+import classes from '~app/Router.module.css'
+
 const rootRoute = createRootRoute({
   component: () => (
     <>
-      <Outlet />
+      <HeadContent />
+
+      {/* ToDo: Header navigation? */}
+
+      <main className={classes['main']}>
+        <Outlet />
+      </main>
+
       <TanStackRouterDevtools />
     </>
   ),
@@ -19,9 +29,7 @@ const rootRoute = createRootRoute({
 
 const indexRoute = createRoute({
   component: () => (
-    <div>
-      <Resume />
-    </div>
+    <Resume />
   ),
   getParentRoute: () => rootRoute,
   path: '/',

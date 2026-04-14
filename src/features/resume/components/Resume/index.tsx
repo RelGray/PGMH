@@ -1,261 +1,259 @@
-import { TFunction } from 'i18next';
-import { ReactElement, ComponentProps, JSX } from 'react';
+import { ComponentProps, JSX } from 'react';
 import { clsx } from 'clsx';
-
-import { useTranslation } from "react-i18next";
-import SectionHeader from '~features/resume/components/SectionHeader';
+import { Trans, useTranslation } from "react-i18next";
 
 import classes from '~features/resume/components/Resume/Resume.module.css'
+import ResumeSection from '~features/resume/components/ResumeSection';
 
-interface ResumeViewParams extends ComponentProps<"div"> {
-  t: TFunction
-}
+const Resume = ({className, ...params}: ComponentProps<"div">): JSX.Element  => {
+  const { t } = useTranslation();
 
-const View = ({t, className, ...params}: ResumeViewParams): JSX.Element  => (
-  <div
-    {...params}
-    className={clsx(className, classes['resume'])}
-  >
-    <header className={classes['resume__header']}>
-      <div>
-        <h1 className={classes['resume__name']}>
-          {t('resume.name')}
-        </h1>
-        <h3>
-          {t('resume.job_title')}
-        </h3>
-      </div>
-
-      <div>
+  return (
+    <div
+      {...params}
+      className={clsx(className, classes['resume'])}
+    >
+      <header className={classes['resume__header']}>
         <div>
-          {t('resume.location')}
+          <h1 className={classes['resume__name']}>
+            {t('resume.name')}
+          </h1>
+          <h3>
+            {t('resume.job_title')}
+          </h3>
         </div>
-      </div>
-    </header>
 
-    <div className={classes['resume__body']}>
-      <section className={classes['resume__section']}>
-        <SectionHeader
-          className={classes['resume__sectionHeader']}
-          label={t('resume.summary.header')}
-        />
-
-        <div className={classes['resume__sectionBody']}>
-          <ul className={classes['resume__list']}>
-            <li>
-              {t('resume.summary.overview')}
-            </li>
-
-            <li>
-              {t('resume.summary.experience')}
-            </li>
-
-            <li>
-              {t('resume.summary.adaptive')}
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <section className={classes['resume__section']}>
-        <SectionHeader
-          className={classes['resume__sectionHeader']}
-          label={t('resume.experience.header')}
-        />
-
-        <div className={classes['resume__sectionBody']}>
+        <div>
           <div>
+            {t('resume.location')}
+          </div>
+        </div>
+      </header>
+
+      <div className={classes['resume__body']}>
+        <ResumeSection
+          className={classes['resume__section']}
+        >
+          <ResumeSection.Header
+            className={classes['resume__sectionHeader']}
+            label={t('resume.summary.header')}
+          />
+
+          <div className={classes['resume__sectionBody']}>
+            <ul className={classes['resume__list']}>
+              <li>
+                {t('resume.summary.overview')}
+              </li>
+
+              <li>
+                {t('resume.summary.experience')}
+              </li>
+
+              <li>
+                {t('resume.summary.adaptive')}
+              </li>
+            </ul>
+          </div>
+        </ResumeSection>
+
+        <ResumeSection
+          className={classes['resume__section']}
+        >
+          <ResumeSection.Header
+            className={classes['resume__sectionHeader']}
+            label={t('resume.experience.header')}
+          />
+
+          <div className={classes['resume__sectionBody']}>
+            <div>
+              <div className={classes['resume__sectionSubHeader']}>
+                <span className={classes['resume__sectionSubLabel']}>
+                  {t('resume.experience.leadr.job_title')}
+                </span>
+
+                <span>
+                  {t('resume.experience.leadr.information')}
+                </span>
+              </div>
+
+              <ul className={classes['resume__list']}>
+                <li>
+                  {t('resume.experience.leadr.summary.soc')}
+                </li>
+
+                <li>
+                  {t('resume.experience.leadr.summary.improvements')}
+                </li>
+
+                <li>
+                  {t('resume.experience.leadr.summary.departments')}
+                </li>
+
+                <li>
+                  {t('resume.experience.leadr.summary.mentoring')}
+                </li>
+
+                <li>
+                  {t('resume.experience.leadr.summary.customers')}
+                </li>
+              </ul>
+            </div>
+
             <div className={classes['resume__sectionSubHeader']}>
-              <span className={classes['resume__sectionSubHeaderLabel']}>
-                {t('resume.experience.leadr.job_title')}
+              <span className={classes['resume__sectionSubLabel']}>
+                {t('resume.experience.turning.job_title')}
               </span>
 
               <span>
-                {t('resume.experience.leadr.information')}
+                {t('resume.experience.turning.information')}
               </span>
             </div>
 
             <ul className={classes['resume__list']}>
               <li>
-                {t('resume.experience.leadr.summary.soc')}
+                {t('resume.experience.turning.summary.overview')}
               </li>
 
               <li>
-                {t('resume.experience.leadr.summary.improvements')}
-              </li>
-
-              <li>
-                {t('resume.experience.leadr.summary.departments')}
-              </li>
-
-              <li>
-                {t('resume.experience.leadr.summary.mentoring')}
-              </li>
-
-              <li>
-                {t('resume.experience.leadr.summary.customers')}
+                {t('resume.experience.turning.summary.focus')}
               </li>
             </ul>
           </div>
+        </ResumeSection>
 
-          <div className={classes['resume__sectionSubHeader']}>
-            <span className={classes['resume__sectionSubHeaderLabel']}>
-              {t('resume.experience.turning.job_title')}
-            </span>
+        <ResumeSection
+          className={classes['resume__section']}
+        >
+          <ResumeSection.Header
+            className={classes['resume__sectionHeader']}
+            label={t('resume.projects.header')}
+          />
 
-            <span>
-              {t('resume.experience.turning.information')}
-            </span>
-          </div>
+          <div className={classes['resume__sectionBody']}>
+            <div>
+              <div className={classes['resume__sectionSubHeader']}>
+                <div className={classes['resume__sectionSubLabel']}>
+                  {t('resume.projects.build_improvements.header')}
+                </div>
+              </div>
 
-          <ul className={classes['resume__list']}>
-            <li>
-              {t('resume.experience.turning.summary.overview')}
-            </li>
+              <ul className={classes['resume__list']}>
+                <li>
+                  {t('resume.projects.build_improvements.summary.cra_ejection')}
+                </li>
 
-            <li>
-              {t('resume.experience.turning.summary.focus')}
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <section className={classes['resume__section']}>
-        <SectionHeader
-          className={classes['resume__sectionHeader']}
-          label={t('resume.projects.header')}
-        />
-
-        <div className={classes['resume__sectionBody']}>
-          <div>
-            <div className={classes['resume__sectionSubHeaderLabel']}>
-              {t('resume.projects.build_improvements.header')}
+                <li>
+                  {t('resume.projects.build_improvements.summary.typescript_conversion')}
+                </li>
+              </ul>
             </div>
 
-            <ul className={classes['resume__list']}>
-              <li>
-                {t('resume.projects.build_improvements.summary.cra_ejection')}
-              </li>
+            <div>
+              <div className={classes['resume__sectionSubHeader']}>
+                <div className={classes['resume__sectionSubLabel']}>
+                  {t('resume.projects.real_time_meetings.header')}
+                </div>
+              </div>
 
-              <li>
-                {t('resume.projects.build_improvements.summary.typescript_conversion')}
-              </li>
-            </ul>
-          </div>
+              <ul className={classes['resume__list']}>
+                <li>
+                  {t('resume.projects.real_time_meetings.summary.description')}
+                </li>
 
-          <div>
-            <div className={classes['resume__sectionSubHeaderLabel']}>
-              {t('resume.projects.real_time_meetings.header')}
+                <li>
+                  {t('resume.projects.real_time_meetings.summary.planning')}
+                </li>
+              </ul>
             </div>
 
-            <ul className={classes['resume__list']}>
-              <li>
-                {t('resume.projects.real_time_meetings.summary.description')}
-              </li>
+            <div>
+              <div className={classes['resume__sectionSubHeader']}>
+                <div className={classes['resume__sectionSubLabel']}>
+                  {t('resume.projects.real_time_scoring.header')}
+                </div>
+              </div>
 
-              <li>
-                {t('resume.projects.real_time_meetings.summary.planning')}
-              </li>
-            </ul>
-          </div>
+              <ul className={classes['resume__list']}>
+                <li>
+                  {t('resume.projects.real_time_scoring.summary.description')}
+                </li>
 
-          <div>
-            <div className={classes['resume__sectionSubHeaderLabel']}>
-              {t('resume.projects.real_time_scoring.header')}
+                <li>
+                  {t('resume.projects.real_time_scoring.summary.features')}
+                </li>
+              </ul>
             </div>
 
-            <ul className={classes['resume__list']}>
-              <li>
-                {t('resume.projects.real_time_scoring.summary.description')}
-              </li>
+            <div>
+              <div className={classes['resume__sectionSubHeader']}>
+                <div className={classes['resume__sectionSubLabel']}>
+                  {t('resume.projects.hot_spot.header')}
+                </div>
+              </div>
 
-              <li>
-                {t('resume.projects.real_time_scoring.summary.features')}
-              </li>
-            </ul>
+              <ul className={classes['resume__list']}>
+                <li>
+                  {t('resume.projects.hot_spot.summary.description')}
+                </li>
+
+                <li>
+                  {t('resume.projects.hot_spot.summary.features')}
+                </li>
+              </ul>
+            </div>
           </div>
+        </ResumeSection>
 
-          <div>
-            <div className={classes['resume__sectionSubHeaderLabel']}>
-              {t('resume.projects.hot_spot.header')}
+        <ResumeSection
+          className={classes['resume__section']}
+        >
+          <ResumeSection.Header
+            className={classes['resume__sectionHeader']}
+            label={t('resume.skills.header')}
+          />
+
+          <div className={classes['resume__sectionBody']}>
+            <div className={classes['resume__list']}>
+              <Trans
+                i18nKey="resume.skills.code.list"
+                values={{label: t('resume.skills.code.label')}}
+                components={{ banana: <span className={classes['resume__sectionSubLabel']} /> }}
+              />
             </div>
 
-            <ul className={classes['resume__list']}>
-              <li>
-                {t('resume.projects.hot_spot.summary.description')}
-              </li>
-
-              <li>
-                {t('resume.projects.hot_spot.summary.features')}
-              </li>
-            </ul>
+            <div>
+              <Trans
+                i18nKey="resume.skills.tools.list"
+                values={{label: t('resume.skills.tools.label')}}
+                components={{ banana: <span className={classes['resume__sectionSubLabel']} /> }}
+              />
+            </div>
           </div>
-        </div>
-      </section>
+        </ResumeSection>
 
-      <section className={classes['resume__section']}>
-        <SectionHeader
-          className={classes['resume__sectionHeader']}
-          label={t('resume.skills.header')}
-        />
+        <ResumeSection
+          className={classes['resume__section']}
+        >
+          <ResumeSection.Header
+            className={classes['resume__sectionHeader']}
+            label={t('resume.education.header')}
+          />
 
-        <div className={classes['resume__sectionBody']}>
-          <div>
-            {/* ToDo: Bolding */}
-            {t('resume.skills.code.list', {label: t('resume.skills.code.label')})}
+          <div className={classes['resume__sectionBody']}>
+            <div className={classes['resume__sectionSubHeader']}>
+              <span className={classes['resume__sectionSubLabel']}>
+                {t('resume.education.ysu.degree')}
+              </span>
+
+              <span>
+                {t('resume.education.ysu.information')}
+              </span>
+            </div>
           </div>
-
-          <div>
-            {/* ToDo: Bolding */}
-            {t('resume.skills.tools.list', {label: t('resume.skills.tools.label')})}
-          </div>
-        </div>
-      </section>
-
-      <section className={classes['resume__section']}>
-        <SectionHeader
-          className={classes['resume__sectionHeader']}
-          label={t('resume.education.header')}
-        />
-
-        <div className={classes['resume__sectionBody']}>
-          <div className={classes['resume__sectionSubHeader']}>
-            <span className={classes['resume__sectionSubHeaderLabel']}>
-              {t('resume.education.ysu.degree')}
-            </span>
-
-            <span>
-              {t('resume.education.ysu.information')}
-            </span>
-          </div>
-        </div>
-      </section>
+        </ResumeSection>
+      </div>
     </div>
-  </div>
-);
-
-
-const Resume = (params: ResumeParams): ReactElement => {
-  const { t } = useTranslation();
-
-  const internalParams = {
-    t,
-  };
-
-  return (
-    <View
-      {...params}
-      {...internalParams}
-    />
   );
 };
 
-export interface ResumeParams extends ComponentProps<'div'> {
-
-}
-
 export default Resume;
-
-export {
-  View,
-};

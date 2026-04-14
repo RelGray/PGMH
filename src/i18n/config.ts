@@ -106,11 +106,11 @@ i18n
               header: "Skills",
               code: {
                 label: "Languages & Libraries",
-                list: "{{label}} - Javascript, React, Angular, Typescript, React Query, Redux, Redux-Saga, Ably, Immer, Zustand, Mocha, Karma, Google APIs, Webpack, Babel, ESLint, Websockets, Web Workers, IndexedDB, Canvas, Emotion, SCSS/CSS, Material UI, Twitter Bootstrap"
+                list: "<banana>{{label}}</banana> - Javascript, React, Angular, Typescript, React Query, Redux, Redux-Saga, Ably, Immer, Zustand, Mocha, Karma, Google APIs, Webpack, Babel, ESLint, Websockets, Web Workers, IndexedDB, Canvas, Emotion, SCSS/CSS, Material UI, Twitter Bootstrap"
               },
               tools: {
                 label: "Platforms & Tools",
-                list: "{{label}} - Git, Visual Studio Code, Jira, Git Kraken, Launch Darkly, SourceTree, Figma, Confluence, GitHub, TeamCity"
+                list: "<banana>{{label}}</banana> - Git, Visual Studio Code, Jira, Git Kraken, Launch Darkly, SourceTree, Figma, Confluence, GitHub, TeamCity"
               }
             },
             education: {

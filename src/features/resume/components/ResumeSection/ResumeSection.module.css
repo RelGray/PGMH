@@ -1,12 +1,13 @@
-.section-header {
+.section__header {
+  margin-bottom: 1rem;
 }
 
-.section-header__label {
+.section__headerLabel {
   margin: 0 1rem 0 0;
   text-transform: uppercase;
   color: #3c78d8;
 }
 
-.section-header__line {
+.section__headerLine {
   width: 100%;
 }

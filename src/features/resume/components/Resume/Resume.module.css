@@ -7,7 +7,6 @@
 }
 
 .resume__name {
-  margin: 0;
   text-transform: uppercase;
   color: #3c78d8;
 }
@@ -15,6 +14,7 @@
 .resume__header {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 1rem;
 }
 
 .resume__body {
@@ -26,6 +26,7 @@
   display: grid;
   grid-column: 1/-1;
   grid-template-columns: subgrid;
+  margin-bottom: 1rem;
 }
 
 .resume__sectionHeader {
@@ -33,14 +34,16 @@
   grid-column: 1/-1;
   grid-template-columns: subgrid;
   align-items: center;
+  margin-bottom: 1rem;
 }
 
 .resume__sectionSubHeader {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 1rem;
 }
 
-.resume__sectionSubHeaderLabel {
+.resume__sectionSubLabel {
   font-weight: 600;
 }
 
@@ -49,5 +52,5 @@
 }
 
 .resume__list {
-  margin: 0;
+  margin: 0 0 1rem;
 }
