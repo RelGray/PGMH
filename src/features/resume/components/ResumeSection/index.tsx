@@ -1,9 +1,9 @@
 import { ComponentProps, JSX } from 'react';
 import { clsx } from 'clsx';
 
-import classes from '~features/resume/components/ResumeSection/ResumeSection.module.css'
+import classes from '~features/resume/components/ResumeSection/ResumeSection.module.css';
 
-const ResumeSection = ({className, children, ...params}: ComponentProps<'section'>): JSX.Element  => (
+const ResumeSection = ({ className, children, ...params }: ComponentProps<'section'>): JSX.Element => (
   <section
     {...params}
     className={clsx(classes['section'], className)}
@@ -13,10 +13,10 @@ const ResumeSection = ({className, children, ...params}: ComponentProps<'section
 );
 
 export interface ResumeSectionHeaderParams extends ComponentProps<'header'> {
-  label: string,
+  label: string
 }
 
-const ResumeSectionHeader = ({label, className, ...params}: ResumeSectionHeaderParams): JSX.Element => (
+const ResumeSectionHeader = ({ label, className, ...params }: ResumeSectionHeaderParams): JSX.Element => (
   <header
     {...params}
     className={clsx(classes['section__header'], className)}
@@ -32,6 +32,5 @@ const ResumeSectionHeader = ({label, className, ...params}: ResumeSectionHeaderP
 );
 
 ResumeSection.Header = ResumeSectionHeader;
-
 
 export default ResumeSection;

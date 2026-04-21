@@ -1,11 +1,11 @@
 import { ComponentProps, JSX } from 'react';
 import { clsx } from 'clsx';
-import { Trans, useTranslation } from "react-i18next";
+import { Trans, useTranslation } from 'react-i18next';
 
-import classes from '~features/resume/components/Resume/Resume.module.css'
+import classes from '~features/resume/components/Resume/Resume.module.css';
 import ResumeSection from '~features/resume/components/ResumeSection';
 
-const Resume = ({className, ...params}: ComponentProps<"div">): JSX.Element  => {
+const Resume = ({ className, ...params }: ComponentProps<'div'>): JSX.Element => {
   const { t } = useTranslation('resume');
 
   return (
@@ -217,7 +217,7 @@ const Resume = ({className, ...params}: ComponentProps<"div">): JSX.Element  => 
               <Trans
                 t={t}
                 i18nKey="skills.code.list"
-                values={{label: t('skills.code.label')}}
+                values={{ label: t('skills.code.label') }}
                 components={{ banana: <span className={classes['resume__sectionSubLabel']} /> }}
               />
             </div>
@@ -226,7 +226,7 @@ const Resume = ({className, ...params}: ComponentProps<"div">): JSX.Element  => 
               <Trans
                 t={t}
                 i18nKey="skills.tools.list"
-                values={{label: t('skills.tools.label')}}
+                values={{ label: t('skills.tools.label') }}
                 components={{ banana: <span className={classes['resume__sectionSubLabel']} /> }}
               />
             </div>

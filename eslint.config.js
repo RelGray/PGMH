@@ -3,11 +3,11 @@ import eslint from '@eslint/js';
 import tseslint from 'typescript-eslint';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
+import stylistic from '@stylistic/eslint-plugin'
 
 import { configs as storybookConfigs } from "eslint-plugin-storybook";
 import { defineConfig } from 'eslint/config';
 import { importX } from 'eslint-plugin-import-x';
-import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript';
 
 
 
@@ -19,6 +19,7 @@ tseslint.configs.recommended,
 importX.flatConfigs.recommended,
 importX.flatConfigs.typescript,
 reactHooks.configs.flat.recommended,
+stylistic.configs.recommended,
 storybookConfigs['flat/recommended'],
 {
   files: [
@@ -38,15 +39,11 @@ storybookConfigs['flat/recommended'],
     'import-x/resolver': {
       typescript: true
     },
-    // 'import-x/resolver-next': [
-    //   createTypeScriptImportResolver({
-    //     alwaysTryTypes: true,
-    //   }),
-    // ],
   },
 
   plugins: {
     'react-refresh': reactRefresh,
+    '@stylistic': stylistic
   },
 
   rules: {
@@ -64,6 +61,10 @@ storybookConfigs['flat/recommended'],
       {
         "exceptRange": true,
       }
+    ],
+    '@stylistic/semi': [
+      'error',
+      'always',
     ],
     'import-x/no-restricted-paths': [
       'error',

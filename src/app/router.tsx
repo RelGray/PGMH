@@ -8,8 +8,7 @@ import {
 import { TanStackRouterDevtools } from '@tanstack/router-devtools';
 
 import Resume from '~features/resume/components/Resume';
-
-import classes from '~app/Router.module.css'
+import classes from '~app/Router.module.css';
 
 const rootRoute = createRootRoute({
   component: () => (
