@@ -1,21 +1,25 @@
-import storybook from "eslint-plugin-storybook";
 import globals from 'globals'
 import eslint from '@eslint/js';
 import tseslint from 'typescript-eslint';
 import reactHooks from 'eslint-plugin-react-hooks';
-import reactRefresh from 'eslint-plugin-react-refresh'
-import importPlugin from 'eslint-plugin-import';
+import reactRefresh from 'eslint-plugin-react-refresh';
 
+import { configs as storybookConfigs } from "eslint-plugin-storybook";
 import { defineConfig } from 'eslint/config';
+import { importX } from 'eslint-plugin-import-x';
+import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript';
+
+
 
 export default defineConfig({
   ignores: ['dist'],
 },
 eslint.configs.recommended,
 tseslint.configs.recommended,
-importPlugin.flatConfigs.recommended,
+importX.flatConfigs.recommended,
+importX.flatConfigs.typescript,
 reactHooks.configs.flat.recommended,
-...storybook.configs['flat/recommended'],
+storybookConfigs['flat/recommended'],
 {
   files: [
     'src/**/*.{ts,tsx}'
@@ -31,9 +35,14 @@ reactHooks.configs.flat.recommended,
   },
 
   settings: {
-    'import/resolver': {
-      typescript: {},
+    'import-x/resolver': {
+      typescript: true
     },
+    // 'import-x/resolver-next': [
+    //   createTypeScriptImportResolver({
+    //     alwaysTryTypes: true,
+    //   }),
+    // ],
   },
 
   plugins: {
@@ -56,7 +65,7 @@ reactHooks.configs.flat.recommended,
         "exceptRange": true,
       }
     ],
-    'import/no-restricted-paths': [
+    'import-x/no-restricted-paths': [
       'error',
       {
         zones: [

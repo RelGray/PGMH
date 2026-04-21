@@ -6,7 +6,7 @@ import classes from '~features/resume/components/Resume/Resume.module.css'
 import ResumeSection from '~features/resume/components/ResumeSection';
 
 const Resume = ({className, ...params}: ComponentProps<"div">): JSX.Element  => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('resume');
 
   return (
     <div
@@ -16,16 +16,16 @@ const Resume = ({className, ...params}: ComponentProps<"div">): JSX.Element  => 
       <header className={classes['resume__header']}>
         <div>
           <h1 className={classes['resume__name']}>
-            {t('resume.name')}
+            {t('name')}
           </h1>
           <h3>
-            {t('resume.job_title')}
+            {t('job_title')}
           </h3>
         </div>
 
         <div>
           <div>
-            {t('resume.location')}
+            {t('location')}
           </div>
         </div>
       </header>
@@ -36,21 +36,21 @@ const Resume = ({className, ...params}: ComponentProps<"div">): JSX.Element  => 
         >
           <ResumeSection.Header
             className={classes['resume__sectionHeader']}
-            label={t('resume.summary.header')}
+            label={t('summary.header')}
           />
 
           <div className={classes['resume__sectionBody']}>
             <ul className={classes['resume__list']}>
               <li>
-                {t('resume.summary.overview')}
+                {t('summary.overview')}
               </li>
 
               <li>
-                {t('resume.summary.experience')}
+                {t('summary.experience')}
               </li>
 
               <li>
-                {t('resume.summary.adaptive')}
+                {t('summary.adaptive')}
               </li>
             </ul>
           </div>
@@ -61,61 +61,61 @@ const Resume = ({className, ...params}: ComponentProps<"div">): JSX.Element  => 
         >
           <ResumeSection.Header
             className={classes['resume__sectionHeader']}
-            label={t('resume.experience.header')}
+            label={t('experience.header')}
           />
 
           <div className={classes['resume__sectionBody']}>
             <div>
               <div className={classes['resume__sectionSubHeader']}>
                 <span className={classes['resume__sectionSubLabel']}>
-                  {t('resume.experience.leadr.job_title')}
+                  {t('experience.leadr.job_title')}
                 </span>
 
                 <span>
-                  {t('resume.experience.leadr.information')}
+                  {t('experience.leadr.information')}
                 </span>
               </div>
 
               <ul className={classes['resume__list']}>
                 <li>
-                  {t('resume.experience.leadr.summary.soc')}
+                  {t('experience.leadr.summary.soc')}
                 </li>
 
                 <li>
-                  {t('resume.experience.leadr.summary.improvements')}
+                  {t('experience.leadr.summary.improvements')}
                 </li>
 
                 <li>
-                  {t('resume.experience.leadr.summary.departments')}
+                  {t('experience.leadr.summary.departments')}
                 </li>
 
                 <li>
-                  {t('resume.experience.leadr.summary.mentoring')}
+                  {t('experience.leadr.summary.mentoring')}
                 </li>
 
                 <li>
-                  {t('resume.experience.leadr.summary.customers')}
+                  {t('experience.leadr.summary.customers')}
                 </li>
               </ul>
             </div>
 
             <div className={classes['resume__sectionSubHeader']}>
               <span className={classes['resume__sectionSubLabel']}>
-                {t('resume.experience.turning.job_title')}
+                {t('experience.turning.job_title')}
               </span>
 
               <span>
-                {t('resume.experience.turning.information')}
+                {t('experience.turning.information')}
               </span>
             </div>
 
             <ul className={classes['resume__list']}>
               <li>
-                {t('resume.experience.turning.summary.overview')}
+                {t('experience.turning.summary.overview')}
               </li>
 
               <li>
-                {t('resume.experience.turning.summary.focus')}
+                {t('experience.turning.summary.focus')}
               </li>
             </ul>
           </div>
@@ -126,24 +126,24 @@ const Resume = ({className, ...params}: ComponentProps<"div">): JSX.Element  => 
         >
           <ResumeSection.Header
             className={classes['resume__sectionHeader']}
-            label={t('resume.projects.header')}
+            label={t('projects.header')}
           />
 
           <div className={classes['resume__sectionBody']}>
             <div>
               <div className={classes['resume__sectionSubHeader']}>
                 <div className={classes['resume__sectionSubLabel']}>
-                  {t('resume.projects.build_improvements.header')}
+                  {t('projects.build_improvements.header')}
                 </div>
               </div>
 
               <ul className={classes['resume__list']}>
                 <li>
-                  {t('resume.projects.build_improvements.summary.cra_ejection')}
+                  {t('projects.build_improvements.summary.cra_ejection')}
                 </li>
 
                 <li>
-                  {t('resume.projects.build_improvements.summary.typescript_conversion')}
+                  {t('projects.build_improvements.summary.typescript_conversion')}
                 </li>
               </ul>
             </div>
@@ -151,17 +151,17 @@ const Resume = ({className, ...params}: ComponentProps<"div">): JSX.Element  => 
             <div>
               <div className={classes['resume__sectionSubHeader']}>
                 <div className={classes['resume__sectionSubLabel']}>
-                  {t('resume.projects.real_time_meetings.header')}
+                  {t('projects.real_time_meetings.header')}
                 </div>
               </div>
 
               <ul className={classes['resume__list']}>
                 <li>
-                  {t('resume.projects.real_time_meetings.summary.description')}
+                  {t('projects.real_time_meetings.summary.description')}
                 </li>
 
                 <li>
-                  {t('resume.projects.real_time_meetings.summary.planning')}
+                  {t('projects.real_time_meetings.summary.planning')}
                 </li>
               </ul>
             </div>
@@ -169,17 +169,17 @@ const Resume = ({className, ...params}: ComponentProps<"div">): JSX.Element  => 
             <div>
               <div className={classes['resume__sectionSubHeader']}>
                 <div className={classes['resume__sectionSubLabel']}>
-                  {t('resume.projects.real_time_scoring.header')}
+                  {t('projects.real_time_scoring.header')}
                 </div>
               </div>
 
               <ul className={classes['resume__list']}>
                 <li>
-                  {t('resume.projects.real_time_scoring.summary.description')}
+                  {t('projects.real_time_scoring.summary.description')}
                 </li>
 
                 <li>
-                  {t('resume.projects.real_time_scoring.summary.features')}
+                  {t('projects.real_time_scoring.summary.features')}
                 </li>
               </ul>
             </div>
@@ -187,17 +187,17 @@ const Resume = ({className, ...params}: ComponentProps<"div">): JSX.Element  => 
             <div>
               <div className={classes['resume__sectionSubHeader']}>
                 <div className={classes['resume__sectionSubLabel']}>
-                  {t('resume.projects.hot_spot.header')}
+                  {t('projects.hot_spot.header')}
                 </div>
               </div>
 
               <ul className={classes['resume__list']}>
                 <li>
-                  {t('resume.projects.hot_spot.summary.description')}
+                  {t('projects.hot_spot.summary.description')}
                 </li>
 
                 <li>
-                  {t('resume.projects.hot_spot.summary.features')}
+                  {t('projects.hot_spot.summary.features')}
                 </li>
               </ul>
             </div>
@@ -209,22 +209,24 @@ const Resume = ({className, ...params}: ComponentProps<"div">): JSX.Element  => 
         >
           <ResumeSection.Header
             className={classes['resume__sectionHeader']}
-            label={t('resume.skills.header')}
+            label={t('skills.header')}
           />
 
           <div className={classes['resume__sectionBody']}>
             <div className={classes['resume__list']}>
               <Trans
-                i18nKey="resume.skills.code.list"
-                values={{label: t('resume.skills.code.label')}}
+                t={t}
+                i18nKey="skills.code.list"
+                values={{label: t('skills.code.label')}}
                 components={{ banana: <span className={classes['resume__sectionSubLabel']} /> }}
               />
             </div>
 
             <div>
               <Trans
-                i18nKey="resume.skills.tools.list"
-                values={{label: t('resume.skills.tools.label')}}
+                t={t}
+                i18nKey="skills.tools.list"
+                values={{label: t('skills.tools.label')}}
                 components={{ banana: <span className={classes['resume__sectionSubLabel']} /> }}
               />
             </div>
@@ -236,17 +238,17 @@ const Resume = ({className, ...params}: ComponentProps<"div">): JSX.Element  => 
         >
           <ResumeSection.Header
             className={classes['resume__sectionHeader']}
-            label={t('resume.education.header')}
+            label={t('education.header')}
           />
 
           <div className={classes['resume__sectionBody']}>
             <div className={classes['resume__sectionSubHeader']}>
               <span className={classes['resume__sectionSubLabel']}>
-                {t('resume.education.ysu.degree')}
+                {t('education.ysu.degree')}
               </span>
 
               <span>
-                {t('resume.education.ysu.information')}
+                {t('education.ysu.information')}
               </span>
             </div>
           </div>

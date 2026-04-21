@@ -1,11 +1,14 @@
+/// <reference types="vitest/config" />
+
+import { playwright } from '@vitest/browser-playwright'
 import { defineConfig } from 'vite';
 import { tanstackRouter } from '@tanstack/router-plugin/vite'
 import react from '@vitejs/plugin-react';
 import viteTsConfigPaths from 'vite-tsconfig-paths';
 import path from 'path';
 
-// https://vite.dev/config/
 export default defineConfig({
+  
   resolve: {
     alias: {
       '~app': path.resolve(__dirname, './src/app'),
@@ -30,4 +33,15 @@ export default defineConfig({
       root: './',
     }),
   ],
+  test: {
+    globals: true,
+    browser: {
+      provider: playwright(),
+      enabled: true,
+      headless: true,
+      instances: [
+        { browser: 'chromium' },
+      ],
+    },
+  },
 })
